@@ -1,0 +1,19 @@
+{
+  "name": "dance-booking-system",
+  "version": "1.0.0",
+  "description": "University Project to create a booking system for dancers to book courses and classes with a local dance organisation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kym-e/fluffy-engine.git"
+  },
+  "author": "Kym Hannah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kym-e/fluffy-engine/issues"
+  },
+  "homepage": "https://github.com/Kym-e/fluffy-engine#readme"
+}
