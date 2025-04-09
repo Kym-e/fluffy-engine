@@ -1,19 +1,22 @@
 {
-  "name": "dance-booking-system",
-  "version": "1.0.0",
-  "description": "University Project to create a booking system for dancers to book courses and classes with a local dance organisation",
-  "main": "index.js",
+  "name": "fluffy-engine",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:css": "tailwindcss -i ./public/CSS/input.css -o ./public/CSS/output.css --watch",
+    "start": "node index",
+    "dev": "nodemon index"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Kym-e/fluffy-engine.git"
-  },
-  "author": "Kym Hannah",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Kym-e/fluffy-engine/issues"
-  },
-  "homepage": "https://github.com/Kym-e/fluffy-engine#readme"
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.3",
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.7",
+    "express": "~4.16.1",
+    "gray-nedb": "^1.8.3",
+    "jsonwebtoken": "^9.0.2",
+    "mustache-express": "^1.3.2",
+    "nodemon": "^3.1.9",
+    "tailwindcss": "^4.1.3"
+  }
 }

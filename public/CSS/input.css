@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lacquer&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --font-poiret: "Poiret One", sans-serif;
+    --font-lacquer: "Lacquer", system-ui;
+}
