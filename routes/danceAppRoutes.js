@@ -4,6 +4,8 @@ const controller = require('../controllers/danceAppControllers.js');
 
 // Add routes
 router.get("/", controller.landing_page);
+router.get("/about", controller.about_page);
+router.get("/contact", controller.contact_page);
 
 // File Not Found
 router.use(function(req, res) {

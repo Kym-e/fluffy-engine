@@ -1,0 +1,24 @@
+<!-- Contact us icon -->
+<div class="fixed bottom-5 right-5 bg-white rounded-full p-5 shadow-lg text-2xl hover:bg-gray-200 transition duration-300 ease-in-out">
+    <a href="mailto:example@example.com">
+        <i class="fa-regular fa-envelope hover:fa-bounce"></i>
+    </a>
+</div>
+
+<!-- bounce icon script -->
+<script>
+    // Add bounce effect on hover
+    document.addEventListener('DOMContentLoaded', function () {
+        const contactIcon = document.querySelector('.fa-envelope');
+
+        if (contactIcon) {
+            contactIcon.addEventListener('mouseenter', function () {
+                this.classList.add('fa-bounce');
+            });
+
+            contactIcon.addEventListener('mouseleave', function () {
+                this.classList.remove('fa-bounce');
+            });
+        }
+    });
+</script>
