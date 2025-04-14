@@ -8,42 +8,57 @@
 <!-- Course List -->
 <main>
 
-<div class="mt-20 mb-10 flex text-center justify-center items-center">
+<div class="md:mt-20 md:mb-10
+            not-md:justify-center not-md:items-center not-md:mx-auto not-md:mt-10 not-md:mb-10
+            flex text-center justify-center items-center">
     <!-- Header -->
     <p class="text-5xl text-center font-lacquer text-gray-700">Courses</p>
 </div>
 
 {{#courses}}
 <!-- Course List -->
-<div class="grid grid-cols-4 gap-1 mt-3 mx-10">
-    <div class="relative group">
+<div class="grid auto-cols-auto
+            md:grid-cols-4 md:gap-1
+            not-md:grid-cols-1 not-md:gap-1
+            not-md:object-cover not-md:rounded-lg not-md:shadow-lg
+            mt-3 mx-10">
+    <!-- grid 1-->
+    <div class="relative group not-md:text-center">
             {{#isBeginner}}
-                <p class="text-green-500 text-5xl text-center font-lacquer"><i class="fa-solid fa-fire"></i></p>
+                <p class="text-green-500 text-5xl not-md:text-3xl text-center font-lacquer"><i class="fa-solid fa-fire"></i></p>
             {{/isBeginner}}
             {{#isIntermediate}}
-                <p class="text-orange-500 text-5xl text-center font-lacquer"><i class="fa-solid fa-fire"></i></p>
+                <p class="text-orange-500 text-5xl not-md:text-3xl text-center font-lacquer"><i class="fa-solid fa-fire"></i></p>
             {{/isIntermediate}}
             {{#isAdvanced}}
-                <p class="text-red-500 text-5xl text-center font-lacquer"><i class="fa-solid fa-fire"></i></p>
+                <p class="text-red-500 text-5xl not-md:text-3xl text-center font-lacquer"><i class="fa-solid fa-fire"></i></p>
             {{/isAdvanced}}
     </div>
-    <div>
+
+    <!-- grid 2-->
+    <div class="not-md:text-center">
             <p class="text-2xl text-gray-700">{{course}}</p>
             <p class="text-xl text-gray-700">Duration: {{course_duration}}</p>
     </div>
-    <div>
+
+    <!-- grid 3 -->
+    <div class="not-md:text-center">
         <p class="text-xl text-gray-700">Start: {{course_start_date}}</p>
         <p class="text-xl text-gray-700">End: {{course_end_date}}</p>
     </div>
+
+    <!-- grid 4 -->
     <div  class=" font-bold text-2xl font-lacquer tracking-tighter
                    border-2 border-cyan-500/70 rounded-lg p-3
                    shadow-lg shadow-cyan-500/50
                    bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500
-                   bg-clip-text text-transparent flex justify-center items-center">
+                   bg-clip-text text-transparent flex justify-center items-center not-md:m-5
+                   ">
         <a href="/courses/{{course}}">
             More Details
         </a>
     </div>
+
 </div>
 {{/courses}}
 

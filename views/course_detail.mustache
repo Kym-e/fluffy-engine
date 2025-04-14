@@ -8,7 +8,8 @@
 
 <!-- Course Detail -->
 <main>
-    <div class="mt-20 mb-10 flex text-center justify-center items-center">
+    <div class="mt-20 mb-10 flex text-center justify-center items-center mx-10 my-5
+                not-md:mt-10 not-md:mb-10">
         <!-- Course -->
         <div>
             <p class="text-5xl text-center font-lacquer text-gray-700">{{course}}</p>
@@ -17,7 +18,7 @@
             {{/entries}}
         </div>
         <!-- Difficulty Level -->
-        <div class="ml-10 relative group">
+        <div class="md:ml-10 relative group">
             {{#entries}}
             {{#isBeginner}}
             <p class="text-green-500 text-5xl text-center font-lacquer"><i class="fa-solid fa-fire fa-shake"></i></p>
@@ -44,16 +45,22 @@
     {{#entries}}
     <!-- Course Description with rounded border-->
     <div class="flex mx-10 my-5 justify-center items-center border-gray-500 rounded-lg p-3 shadow-lg bg-green-50">
-        <p class="text-gray-700 mt-5 text-xl">
+        <p class="text-gray-700 text-xl">
             {{course_description}}
         </p>
     </div>
         <p class="text-3xl font-lacquer text-gray-700 text-center">Course Details</p>
     <!-- Course Details -->
-    <section class="flex mx-10 my-5 justify-center items-center border-gray-500 rounded-lg p-3 shadow-lg bg-gray-50">
+    <section class="md:flex
+                mx-10 my-5 justify-center items-center
+                border-gray-500 rounded-lg p-3 shadow-lg
+                md:bg-gray-50
+                not-md:object-cover not-md:rounded-lg not-md:shadow-lg">
 
     <!-- Course Details: Start and End Dates -->
-    <div class="mx-1 my-5 justify-center items-center border-gray-500 rounded-lg p-3 shadow-lg bg-blue-50">
+    <div class="mx-1 my-5 justify-center items-center
+            border-gray-500 rounded-lg p-3 shadow-lg
+            bg-blue-50">
             <p class="text-3xl font-lacquer text-gray-700">Course Dates</p>
             <p class="text-2xl text-gray-700">Start Date: {{course_start_date}}</p>
             <p class="text-2xl text-gray-700">End Date: {{course_end_date}}</p>
@@ -78,6 +85,26 @@
         <p class="text-2xl text-gray-700">Instructor Name: {{instructor}}</p>
         <p class="text-2xl text-gray-700">Instructor Bio: {{instructor_bio}}</p>
     </div>
+
+    </section>
+    <p class="text-3xl font-lacquer text-gray-700 text-center">Location</p>
+        <p class="text-2xl text-gray-700 text-center">Location: {{course_location}}</p>
+    <!-- Course Details: Location -->
+    <section class="mx-10 my-5 border-gray-500 rounded-lg p-3 shadow-lg bg-gray-50">
+        <div class="mx-10 my-5">
+            <!-- Google Maps Platform (GMP) map component -->
+            <gmp-map
+                    center="55.86694472289798, -4.249874348788885"
+                    zoom="15"
+                    map-id="DEMO_DANCE_CITY"
+                    class="w-full h-[500px]"
+            >
+                <gmp-advanced-marker
+                        position="55.86694472289798, -4.249874348788885"
+                        title="123 Dance Street, Dance City"
+                ></gmp-advanced-marker>
+            </gmp-map>
+        </div>
     </section>
     {{/entries}}
 </main>
