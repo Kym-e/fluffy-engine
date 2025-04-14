@@ -5,8 +5,137 @@
 <body>
 <!-- Nav bar -->
 {{>nav}}
+<!-- Main content -->
+<main>
+    <div class="mt-10 mb-10">
+        <h1 class="text-xl font-bold text-center mt-10">About Us</h1>
+    </div>
+    <section>
+        <div class="md:flex
+                    not-md:justify-center not-md:items-center">
+            <div>
+                <img src="/images/rainbow dance 1.jpg"
+                     alt="dancer in rainbow lights"
+                     class="w-3/4 object-cover rounded-lg shadow-lg
+                            md:ml-10
+                            not-md:justify-center not-md:items-center not-md:mx-auto">
+            </div>
 
-About us
+            <div class="mr-10 py-5
+                        md:ml-10
+                        not-md:justify-center not-md:items-center not-md:mx-auto
+                        not-md:w-3/4 not-md:object-cover not-md:rounded-lg not-md:shadow-lg">
+                <p class="text-5xl font-lacquer text-gray-700">
+                    Welcome to Passion Fruit Studios!
+                </p>
+                <p class="text-lg text-gray-700 mt-5">
+                    We are passionate about dance and believe in its power to bring people together.
+                </p>
+                <p class="text-lg text-gray-700 mt-5">
+                    Our mission is to create a vibrant and inclusive community where everyone can express themselves through movement.
+                </p>
+                <p class="text-lg text-gray-700 mt-5">
+                    Whether you are a beginner or an experienced dancer, we have something for everyone. Join us for classes, workshops, and events that celebrate the joy of movement and creativity.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="md:flex
+                    not-md:justify-center not-md:items-center">
+            <div class="mr-10 py-5
+                        md:ml-10
+                        not-md:justify-center not-md:items-center not-md:mx-auto
+                        not-md:w-3/4 not-md:object-cover not-md:rounded-lg not-md:shadow-lg">
+                <p class="text-5xl font-lacquer text-gray-700">
+                    Location
+                </p>
+                <p class="text-lg text-gray-700 mt-5">
+                    Our main studio is located in the heart of Dance City, however
+                    we also run classes in various locations across the city.
+                </p>
+                <address class="text-lg text-gray-700 mt-3 mb-3">
+                    <p>123 Dance Street,
+                    Dance City, DC12 34E</p>
+                </address>
+
+                <gmp-map
+                        center="55.86694472289798, -4.249874348788885"
+                        zoom="15"
+                        map-id="DEMO_DANCE_CITY"
+                        class="md:h-[300px] md:w-[900px]
+                               not-md:h-[300px] not-md:w-[300px] not-md:mx-auto
+                               mt-5 mb-5"
+
+                >
+                    <gmp-advanced-marker
+                            position="55.86694472289798, -4.249874348788885"
+                            title="123 Dance Street, Dance City"
+                    ></gmp-advanced-marker>
+                </gmp-map>
+
+
+            </div>
+            <div class="items-center not-md:hidden">
+                <img src="/images/rainbow dance 2.jpg"
+                     alt="dancer in rainbow lights"
+                     class="w-3/4 h-3/4 object-cover rounded-lg shadow-lg
+                            md:ml-10
+                            not-md:justify-center  not-md:mx-auto">
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="mb-10 py-5
+                    md:flex
+                    not-md:justify-center not-md:items-center">
+            <div>
+                <img src="/images/rainbow dance 3.jpg"
+                     alt="dancer in rainbow lights"
+                     class="not-md:w-3/4 h-3/4 object-cover rounded-lg shadow-lg
+                            md:ml-10
+                            not-md:hidden">
+            </div>
+            <div class="mr-10 mb-20
+                        not-md:justify-center not-md:items-center not-md:mx-auto
+                        not-md:w-3/4 not-md:object-cover not-md:rounded-lg not-md:shadow-lg">
+                <p class="text-5xl font-lacquer text-gray-700">
+                    Classes/Courses
+                </p>
+                <p class="text-lg text-gray-700 mt-5">
+                    Classes are available for all ages and skill levels. We also offer a variety of dance styles including:
+                </p>
+                <ul class="text-lg text-gray-700 mt-5">
+                    <li>Hip Hop</li>
+                    <li>Ballet</li>
+                    <li>Cheerleading</li>
+                    <li>Tap</li>
+                    <li>Jazz</li>
+                    <li>Break dancing</li>
+                    <li>Contemporary</li>
+                </ul>
+                <p class="text-3xl font-lacquer text-gray-700 mt-5">Skill Levels</p>
+                <p class="text-lg text-gray-700 mt-3">
+                    We rate our classes and courses based on the following levels:
+                </p>
+
+                <div class="grid grid-cols-3 gap-2 mt-3">
+                    <div>
+                        <p class="text-green-500 text-xl"><i class="fa-regular fa-fire hover:animate-ping"></i> Beginner</p>
+                    </div>
+                    <div>
+                        <p class="text-orange-500 text-xl"><i class="fa-regular fa-fire hover:animate-ping"></i> Intermediate</p>
+                    </div>
+                    <div>
+                        <p class="text-red-500 text-xl"><i class="fa-regular fa-fire hover:animate-ping"></i> Advanced</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
 
 <!-- Contact us icon -->
 {{>email_us_icon}}
