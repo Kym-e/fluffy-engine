@@ -1,0 +1,58 @@
+<html>
+<head>
+    {{>base_header}}
+</head>
+<body>
+<!-- Nav bar -->
+{{>nav}}
+<!-- Course List -->
+<main>
+
+<div class="mt-20 mb-10 flex text-center justify-center items-center">
+    <!-- Header -->
+    <p class="text-5xl text-center font-lacquer text-gray-700">Courses</p>
+</div>
+
+{{#courses}}
+<!-- Course List -->
+<div class="grid grid-cols-4 gap-1 mt-3 mx-10">
+    <div class="relative group">
+            {{#isBeginner}}
+                <p class="text-green-500 text-5xl text-center font-lacquer"><i class="fa-solid fa-fire"></i></p>
+            {{/isBeginner}}
+            {{#isIntermediate}}
+                <p class="text-orange-500 text-5xl text-center font-lacquer"><i class="fa-solid fa-fire"></i></p>
+            {{/isIntermediate}}
+            {{#isAdvanced}}
+                <p class="text-red-500 text-5xl text-center font-lacquer"><i class="fa-solid fa-fire"></i></p>
+            {{/isAdvanced}}
+    </div>
+    <div>
+            <p class="text-2xl text-gray-700">{{course}}</p>
+            <p class="text-xl text-gray-700">Duration: {{course_duration}}</p>
+    </div>
+    <div>
+        <p class="text-xl text-gray-700">Start: {{course_start_date}}</p>
+        <p class="text-xl text-gray-700">End: {{course_end_date}}</p>
+    </div>
+    <div  class=" font-bold text-2xl font-lacquer tracking-tighter
+                   border-2 border-cyan-500/70 rounded-lg p-3
+                   shadow-lg shadow-cyan-500/50
+                   bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500
+                   bg-clip-text text-transparent flex justify-center items-center">
+        <a href="/courses/{{course}}">
+            More Details
+        </a>
+    </div>
+</div>
+{{/courses}}
+
+{{#empty}}
+    <p>No courses available.</p>
+{{/empty}}
+</main>
+
+<!-- Contact us icon -->
+{{>email_us_icon}}
+</body>
+</html>

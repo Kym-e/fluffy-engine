@@ -1,0 +1,89 @@
+<html>
+<head>
+    {{>base_header}}
+</head>
+<body>
+<!-- Nav bar -->
+{{>nav}}
+
+<!-- Course Detail -->
+<main>
+    <div class="mt-20 mb-10 flex text-center justify-center items-center">
+        <!-- Course -->
+        <div>
+            <p class="text-5xl text-center font-lacquer text-gray-700">{{course}}</p>
+            {{#entries}}
+            <p class="text-2xl text-gray-700">Duration: {{course_duration}}</p>
+            {{/entries}}
+        </div>
+        <!-- Difficulty Level -->
+        <div class="ml-10 relative group">
+            {{#entries}}
+            {{#isBeginner}}
+            <p class="text-green-500 text-5xl text-center font-lacquer"><i class="fa-solid fa-fire fa-shake"></i></p>
+            <span class="absolute left-full top-1/2 -translate-y-1/2 ml-2 w-max px-2 py-1 text-sm text-white bg-gray-700 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                 Beginner Friendly
+            </span>
+            {{/isBeginner}}
+            {{#isIntermediate}}
+            <p class="text-orange-500 text-5xl text-center font-lacquer"><i class="fa-solid fa-fire fa-shake"></i></p>
+            <span class="absolute left-full top-1/2 -translate-y-1/2 ml-2 w-max px-2 py-1 text-sm text-white bg-gray-700 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                 Intermediate
+            </span>
+            {{/isIntermediate}}
+            {{#isAdvanced}}
+            <p class="text-red-500 text-5xl text-center font-lacquer"><i class="fa-solid fa-fire fa-shake"></i></p>
+            <span class="absolute left-full top-1/2 -translate-y-1/2 ml-2 w-max px-2 py-1 text-sm text-white bg-gray-700 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                 Advanced
+            </span>
+            {{/isAdvanced}}
+            {{/entries}}
+        </div>
+    </div>
+
+    {{#entries}}
+    <!-- Course Description with rounded border-->
+    <div class="flex mx-10 my-5 justify-center items-center border-gray-500 rounded-lg p-3 shadow-lg bg-green-50">
+        <p class="text-gray-700 mt-5 text-xl">
+            {{course_description}}
+        </p>
+    </div>
+        <p class="text-3xl font-lacquer text-gray-700 text-center">Course Details</p>
+    <!-- Course Details -->
+    <section class="flex mx-10 my-5 justify-center items-center border-gray-500 rounded-lg p-3 shadow-lg bg-gray-50">
+
+    <!-- Course Details: Start and End Dates -->
+    <div class="mx-1 my-5 justify-center items-center border-gray-500 rounded-lg p-3 shadow-lg bg-blue-50">
+            <p class="text-3xl font-lacquer text-gray-700">Course Dates</p>
+            <p class="text-2xl text-gray-700">Start Date: {{course_start_date}}</p>
+            <p class="text-2xl text-gray-700">End Date: {{course_end_date}}</p>
+
+    </div>
+    <!-- Course Details: Course Fee-->
+    <div class="mx-1 my-5 justify-center items-center border-gray-500 rounded-lg p-3 shadow-lg bg-purple-50">
+        <p class="text-3xl font-lacquer text-gray-700 text-center">Price</p>
+        <p class="text-2xl text-gray-700 text-center"> £{{course_fee}}</p>
+    </div>
+
+    <!-- Course Details: When -->
+    <div class="mx-1 my-5 justify-center items-center border-gray-500 rounded-lg p-3 shadow-lg bg-yellow-50">
+        <p class="text-3xl font-lacquer text-gray-700">When</p>
+        <p class="text-2xl text-gray-700">{{course_schedule}}</p>
+        <p class="text-2xl text-gray-700">From {{course_time}}</p>
+    </div>
+
+    <!-- Course Details: Instructor -->
+    <div class="mx-1 my-5 justify-center items-center border-gray-500 rounded-lg p-3 shadow-lg bg-pink-50">
+        <p class="text-3xl font-lacquer text-gray-700">Instructor</p>
+        <p class="text-2xl text-gray-700">Instructor Name: {{instructor}}</p>
+        <p class="text-2xl text-gray-700">Instructor Bio: {{instructor_bio}}</p>
+    </div>
+    </section>
+    {{/entries}}
+</main>
+
+<!-- Contact us icon -->
+{{>email_us_icon}}
+
+</body>
+</html>

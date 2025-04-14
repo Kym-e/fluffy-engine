@@ -3,8 +3,6 @@ const app = express();
 
 require('dotenv').config() // loads data from .env file
 
-
-
 const cookieParser = require('cookie-parser')
 app.use(cookieParser())
 
@@ -15,6 +13,7 @@ app.use(express.urlencoded({
 const path = require('path');
 const public_dir = path.join(__dirname,'public');
 app.use(express.static(public_dir));
+
 
 // CSS? Tailwind
 
