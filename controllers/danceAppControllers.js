@@ -1,8 +1,8 @@
 const danceAppDAO = require('../models/danceAppModel');
-const db = new danceAppDAO();
+const db = new danceAppDAO('./data/danceApp.db');
 const DateFormatter = require('../utils/dateFormatter');
 
-db.init();
+// db.init();
 
 exports.landing_page = function(req, res) {
     res.render('landing',
@@ -29,6 +29,7 @@ exports.contact_page = function(req, res) {
 }
 
 exports.courses_page = function(req, res) {
+    const success = req.query.success === 'true';
     db.getAllEntries()
         .then((list) => {
             const formattedList = list.map(course => ({
@@ -41,6 +42,7 @@ exports.courses_page = function(req, res) {
                     'title': 'Courses',
                     'GOOGLE_MAPS_API_KEY': process.env.GOOGLE_MAPS_API_KEY,
                     'courses': formattedList,
+                    'success':success
                 }
             );
         })
@@ -58,6 +60,8 @@ exports.course_detail_page = function(req, res) {
                 course_start_date: DateFormatter.format(entry.course_start_date),
                 course_end_date: DateFormatter.format(entry.course_end_date),
             }));
+
+
             res.render('course_detail',
                 {
                     'title': `${course}`,
@@ -71,4 +75,23 @@ exports.course_detail_page = function(req, res) {
             console.log("Error: ");
             console.log(JSON.stringify(err));
         });
+}
+
+exports.new_booking = function(req, res) {
+    const course = req.params.course;
+    res.render('newBooking', {
+        'title': 'Book a Course',
+        'course': course,
+    });
+}
+
+exports.post_new_booking = function(req, res) {
+    let name = req.body.name;
+    let course_booked = req.body.course_booked;
+    let isUnderEighteen = req.body.isUnderEighteen;
+    let email = req.body.email;
+    let additionalInfo = req.body.additionalInfo;
+
+    db.addCourseBooking(name, course_booked, isUnderEighteen, email, additionalInfo);
+    res.redirect('/courses?success=true');
 };

@@ -8,6 +8,7 @@ class DanceApp {
             console.log('DB connected to ' + dbFilePath);
         } else {
             this.db = new nedb();
+            console.log('DB created in memory');
         }
     }
 
@@ -30,6 +31,7 @@ class DanceApp {
                 isBeginner: true,
                 isIntermediate: false,
                 isAdvanced: false,
+                entryType: 'course',
             }
         );
         console.log('DB initialized with sample data');
@@ -51,6 +53,7 @@ class DanceApp {
                 isBeginner: false,
                 isIntermediate: true,
                 isAdvanced: false,
+                entryType: 'course',
             }
         );
 
@@ -71,6 +74,7 @@ class DanceApp {
                 isBeginner: false,
                 isIntermediate: false,
                 isAdvanced: true,
+                entryType: 'course',
             }
         );
 
@@ -91,6 +95,7 @@ class DanceApp {
                 isBeginner: true,
                 isIntermediate: false,
                 isAdvanced: false,
+                entryType: 'course',
             }
         );
     }
@@ -101,7 +106,7 @@ class DanceApp {
         return new Promise((resolve, reject) => {
             //use the find() function of the database to get the data,
             //error first callback function, err for error, entries for data
-            this.db.find({}, function (err, entries) {
+            this.db.find({'entryType': 'course'}, function (err, entries) {
                 //if error occurs reject Promise
                 if (err) {
                     reject(err);
@@ -125,6 +130,25 @@ class DanceApp {
                     console.log('getEntriesByCourse returns: ', entries);
                 }
             })
+        })
+    }
+
+    addCourseBooking(name, course, isUnderEighteen, email, additionalInfo) {
+        var entry = {
+            name: name,
+            course_booked: course,
+            isUnderEighteen: isUnderEighteen,
+            email: email,
+            additionalInfo: additionalInfo,
+            entryType: 'booking',
+        }
+        console.log('entry created', entry);
+        this.db.insert(entry, function (err, doc) {
+            if (err) {
+                console.log('Error inserting document', subject);
+            } else {
+                console.log('document inserted into the database', doc);
+            }
         })
     }
 }

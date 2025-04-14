@@ -5,6 +5,16 @@
 <body>
 <!-- Nav bar -->
 {{>nav}}
+
+<!-- Booking Success -->
+{{#success}}
+    <div class="">
+        <p class="md:mt-20 md:mb-10 flex items-center justify-center border-2 border-gray-500 rounded-lg p-3 md:col-span-2 shadow-lg bg-green-50
+            not-md:justify-center not-md:items-center not-md:mx-auto not-md:mt-10 not-md:mb-10
+            flex text-center justify-center items-center">Booking submitted successfully!</p>
+    </div>
+{{/success}}
+
 <!-- Course List -->
 <main>
 

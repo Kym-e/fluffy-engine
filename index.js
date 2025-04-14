@@ -14,7 +14,10 @@ const path = require('path');
 const public_dir = path.join(__dirname,'public');
 app.use(express.static(public_dir));
 
-
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 // CSS? Tailwind
 
 const mustache = require('mustache-express');

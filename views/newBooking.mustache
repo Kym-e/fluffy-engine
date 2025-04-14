@@ -1,0 +1,52 @@
+<html>
+<head>
+    {{>base_header}}
+</head>
+<body>
+<!-- Nav bar -->
+{{>nav}}
+
+<!-- New Booking Form -->
+<main>
+    <div class="mt-20 mb-10  text-center justify-center items-center mx-10 my-5
+                not-md:mt-10 not-md:mb-10">
+        <!-- Course -->
+        <div>
+            <p class="text-5xl text-center font-lacquer text-gray-700">Book a course</p>
+        </div>
+
+        <!-- Form for booking -->
+        <form method="POST" action="/courses/{{course}}/book" class="flex flex-col items-center">
+            <div class="mb-4">
+                <!-- Select Course - from course detail screen -->
+                <!-- Hidden input to include the course name -->
+                <input type="hidden" id="course_booked" name="course_booked" value="{{course}}">
+
+                <!-- Add Name -->
+                <label for="name" class="block text-gray-700 text-lg font-bold mb-2 mt-4">Name:</label>
+                <input type="text" id="name" name="name" class="border border-gray-300 rounded-lg p-2 w-full" required>
+
+                <!-- Add Email -->
+                <label for="email" class="block text-gray-700 text-lg font-bold mb-2 mt-4">Email:</label>
+                <input type="email" id="email" name="email" class="border border-gray-300 rounded-lg p-2 w-full" required>
+
+                <!-- Add Additional Information -->
+                <label for="additionalInfo" class="block text-gray-700 text-lg font-bold mb-2 mt-4">Any Additional Info:</label>
+                <textarea id="additionalInfo" name="additionalInfo" class="border border-gray-300 rounded-lg p-2 w-full" rows="4"></textarea>
+
+                <!-- Is under 18 -->
+                <label for="isUnderEighteen" class="block text-gray-700 text-lg font-bold mb-2 mt-4">Are you under 18?</label>
+                <input type="checkbox" id="isUnderEighteen" name="isUnderEighteen" class="border border-gray-300 rounded-lg p-2">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Book Now
+            </button>
+
+        </form>
+    </div>
+</main>
+
+</body>
+</html>
