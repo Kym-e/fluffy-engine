@@ -3,6 +3,8 @@ const app = express();
 
 require('dotenv').config() // loads data from .env file
 
+
+
 const cookieParser = require('cookie-parser')
 app.use(cookieParser())
 

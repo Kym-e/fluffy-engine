@@ -11,12 +11,18 @@ exports.landing_page = function(req, res) {
 
 exports.about_page = function(req, res) {
     res.render('about',
-        {'title': 'About Us'}
+        {
+            'title': 'About Us',
+            'GOOGLE_MAPS_API_KEY': process.env.GOOGLE_MAPS_API_KEY,
+        }
     )
 }
 
 exports.contact_page = function(req, res) {
     res.render('contact_us',
-        {'title': 'Contact Us'}
+        {
+            'title': 'Contact Us',
+            'GOOGLE_MAPS_API_KEY': process.env.GOOGLE_MAPS_API_KEY,
+        }
     )
 }

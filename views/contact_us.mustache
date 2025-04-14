@@ -1,20 +1,28 @@
+<!--
+This is the HTML structure for the "Contact Us" page. It includes various sections such as a navigation bar,
+contact methods (phone, email, visit, and social media), and a Google Maps integration for location display.
+-->
+
 <html>
 <head>
+    <!-- Includes the base header template -->
     {{>base_header}}
 </head>
 <body>
-<!-- Nav bar -->
+<!-- Includes the navigation bar template -->
 {{>nav}}
 
-<!-- Contact us section -->
+<!-- Main content section for the "Contact Us" page -->
 <main class="grid p-5 mt-10 gap-5 grid-cols-1
             md:grid-cols-2">
 
+    <!-- Section header -->
     <div class="md:col-span-2">
         <h1 class="text-3xl font-bold text-center">Contact Us</h1>
         <p class="text-center mt-5">We'd love to hear from you! Please select one of the methods below to get in touch.</p>
     </div>
 
+    <!-- Phone contact section -->
     <div class="flex items-center justify-center border-2 border-gray-500 rounded-lg p-3 shadow-lg bg-green-50 grayscale hover:grayscale-0 transition duration-300">
         <p class="text-lg text-green-500 font-bold"><i class="fa-regular fa-phone"></i> Phone us</p>
         <div class="ml-5">
@@ -25,6 +33,7 @@
         </div>
     </div>
 
+    <!-- Email contact section -->
     <div class="flex items-center justify-center border-2 border-gray-500 rounded-lg p-3 shadow-lg bg-indigo-50 grayscale hover:grayscale-0 transition duration-300">
        <p class="text-lg text-indigo-500 font-bold"><i class="fa-solid fa-envelope"></i> Email Us</p>
         <div class="ml-5">
@@ -33,6 +42,7 @@
         </div>
     </div>
 
+    <!-- Visit us section with Google Maps integration -->
     <div class="flex items-center justify-center border-2 border-gray-500 rounded-lg p-3 md:col-span-2 shadow-lg bg-purple-50 grayscale hover:grayscale-0 transition duration-300">
 
         <div class="ml-5">
@@ -42,6 +52,7 @@
                 <p>Dance City, DC12 34E</p>
             </address>
         </div>
+        <!-- Google Maps Platform (GMP) map component -->
         <gmp-map
                 center="55.86694472289798, -4.249874348788885"
                 zoom="15"
@@ -56,10 +67,12 @@
         </gmp-map>
     </div>
 
+    <!-- Social media contact section -->
     <div class="flex items-center justify-center border-2 border-gray-500 rounded-lg p-3 md:col-span-2 shadow-lg bg-pink-50 grayscale hover:grayscale-0 transition duration-300">
         <p class="text-lg text-pink-500 font-bold"><i class="fa-solid fa-hashtag"></i> Social media</p>
         <div class="ml-5">
             <p class="text-sm font-bold">Follow us on: </p>
+            <!-- Social media links -->
             <p class="flex-1 hover:text-[#1877F2] hover:font-semibold"><a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-square-facebook"></i> Facebook</a></p>
             <p class="flex-1 hover:text-[#E1306C] hover:font-semibold"><a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a></p>
             <p class="flex-1 hover:text-black hover:font-semibold "><a href="https://www.x.com/" target="_blank"><i class="fa-brands fa-x-twitter"></i> Twitter</a></p>
@@ -67,7 +80,4 @@
     </div>
 
 </main>
-
-
-
 </body>
