@@ -1,9 +1,11 @@
 const danceAppDAO = require('../models/danceAppModel');
 const db = new danceAppDAO('./data/danceApp.db');
 const DateFormatter = require('../utils/dateFormatter');
+const userDao = require("../models/userModel.js");
 
 // db.init();
 
+// Static Pages
 exports.landing_page = function(req, res) {
     res.render('landing',
         {'title': 'Dance App'}
@@ -28,6 +30,7 @@ exports.contact_page = function(req, res) {
     )
 }
 
+// Courses Pages
 exports.courses_page = function(req, res) {
     const success = req.query.success === 'true';
     db.getAllEntries()
@@ -77,6 +80,7 @@ exports.course_detail_page = function(req, res) {
         });
 }
 
+// Course Booking Page
 exports.new_booking = function(req, res) {
     const course = req.params.course;
     res.render('newBooking', {
@@ -95,3 +99,51 @@ exports.post_new_booking = function(req, res) {
     db.addCourseBooking(name, course_booked, isUnderEighteen, email, additionalInfo);
     res.redirect('/courses?success=true');
 };
+
+// Login
+exports.login_page = function (req, res) {
+    res.render("user/login_page",
+        {'title': 'Login',}
+    );
+};
+
+exports.post_login = function (req, res) {
+    res.render("landing", {
+        title: "Organiser View",
+        user: "user"
+    });
+};
+
+// Logout
+exports.logout = function (req, res) {
+    res.clearCookie("jwt").status(200).redirect("/");
+    console.log("Logged out");
+};
+
+// Register
+exports.register_page = function (req, res) {
+    res.render("user/register_page.mustache",
+        {'title': 'Register',}
+    );
+};
+
+exports.post_register = function (req, res) {
+    const user = req.body.username;
+    const password = req.body.password;
+
+    if (!user || !password) {
+        res.send(401, "no user or no password");
+        return;
+    }
+    userDao.lookup(user, function (err, u) {
+        if (u) {
+            res.send(401, "User exists:", user);
+            return;
+        }
+        userDao.create(user, password);
+        console.log("register user", user, "password", password);
+        res.redirect("/login");
+    });
+};
+
+//

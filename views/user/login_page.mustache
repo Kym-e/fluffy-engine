@@ -1,0 +1,58 @@
+<html>
+<head>
+    {{>base_header}}
+</head>
+<body>
+<!-- Nav bar -->
+{{>nav}}
+
+<main>
+    <!-- Login Page: Heading -->
+    <div class="md:mt-20 md:mb-10
+                not-md:justify-center not-md:items-center not-md:mx-auto not-md:mt-10 not-md:mb-10
+                flex text-center justify-center items-center">
+        <p class="text-5xl text-center font-lacquer text-gray-700">Login</p>
+    </div>
+
+    <!-- Login Form -->
+    <div class="md:mt-10 md:mb-10>
+                not-md:justify-center not-md:items-center not-md:mx-auto not-md:mt-10 not-md:mb-10
+                flex text-center justify-center items-center
+                ">
+        <form method="POST" action="/login">
+            <div>
+                <label for="username" class="block text-gray-700 text-sm font-bold mb-2">Username:</label>
+                <input type="text" id="username" name="username"
+                       required
+                       class="shadow appearance-none border rounded w-full py-2 px-3
+                          text-gray-700 leading-tight
+                              focus:outline-none focus:shadow-outline"
+                >
+            </div>
+            <div>
+                <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password:</label>
+                <input type="password" id="password" name="password"
+                       required
+                       class="shadow appearance-none border rounded w-full py-2 px-3
+                          text-gray-700 leading-tight
+                              focus:outline-none focus:shadow-outline"
+                >
+            </div>
+            <div class="flex items-center justify-center mt-4">
+                <button type="submit"
+                        class="bg-blue-500 hover:bg-blue-700
+                            text-white font-bold
+                                py-2 px-4 rounded
+                                focus:outline-none focus:shadow-outline">
+                    Login
+                </button>
+            </div>
+        </form>
+    </div>
+</main>
+
+<!-- Contact us icon -->
+{{>email_us_icon}}
+
+</body>
+</html>
