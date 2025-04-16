@@ -6,25 +6,16 @@ Organisers can create courses in the Organiser View.  This is a step by step gui
 
 Make sure that:
 - You have logged in to the Organiser View
-
-<tabs>
-<tab title="Live Web Application">
-<a href="https://passionfruitstudios.azurewebsites.net/login">Login Page on live web application</a>
-</tab>
-<tab title="Local Application">
-<a href="http://localhost:3000/login">Login Page on local machine</a>
-<p> Ensure that you have set up the application correctly on your local machine</p>
-</tab>
-</tabs>
-  
+  - [Live Implementation Login Page]("https://passionfruitstudios.azurewebsites.net/login")
+  - [Local Implementation Login Page]("http://localhost:3000/login")
 
 ## How to Create a Course
 
 An Organiser can create a course in the Organiser View.
 1. Click on the **Create New Course** button on the Organiser View.
-![](CreateNewCourse1.png){width=500}
+![](images/CreateNewCourse1.png){width=500}
 2. Fill in details on the **Create Course** page.
-![](CreateNewCourse2.png){width=500}
+![](images/CreateNewCourse2.png){width=500}
 
 Expected data as follows:
 
@@ -44,6 +35,6 @@ Expected data as follows:
 | Beginner/Intermediate/Advanced      | The level of the course.  This is a checkbox.  Please only select 1                        | Check box                           |
 
 Youtube Embeded Link
-![](CreateNewCourseYoutube.png "Youtube Embed Code"){width=500}
+![](images/CreateNewCourseYoutube.png "Youtube Embed Code"){width=500}
 
 3. Click on the **Create Course** button to create the course.
