@@ -134,3 +134,12 @@ The application is deployed on Azure, and can be accessed on the following link:
 ## SonarCloud Status
 [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=Kym-e_fluffy-engine2)](https://sonarcloud.io/summary/new_code?id=Kym-e_fluffy-engine2)
    
+## Test Results
+System Test results are available in the [Test/TestPlan.md](Test/TestPlan.md) file.  
+Evidence of the tests are available in the ResultsEvidence folder.  
+This contains PDF and video evidence exported from Xray Exploratory App.
+
+2 Issues were found and fixed:
+
+- Incorrect Title on View Class/Course page.
+- Login with Invalid Credentials - Error message not displayed, application crashes.
