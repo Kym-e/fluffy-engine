@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE buildprofiles SYSTEM "https://resources.jetbrains.com/writerside/1.0/build-profiles.dtd">
+<buildprofiles xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/build-profiles.xsd"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <variables></variables>
+    <build-profile instance="pwad">
+        <variables>
+            <noindex-content>true</noindex-content>
+            <primary-color>iris</primary-color>
+            <color-preset>contrast</color-preset>
+            <header-logo>PFMiniLogo.png</header-logo>
+            <product-web-url>https://passionfruitstudios.azurewebsites.net</product-web-url>
+            <download-title>Github Repository</download-title>
+            <download-page>https://github.com/Kym-e/fluffy-engine</download-page>
+            <showDownloadButton>true</showDownloadButton>
+        </variables>
+
+        <shortcuts>
+            <src>keymap.xml</src>
+            <layout name="Windows" display-name="Windows"/>
+            <layout name="macOS" display-name="macOS"/>
+        </shortcuts>
+
+    </build-profile>
+
+</buildprofiles>

@@ -1,6 +1,11 @@
 # fluffy-engine
+## Description
+...
 
-Setup Github Actions
+## Documentation
+Link to documentation: --github pages
 
-
-Checking if I can sign my commits using keys
+## Features
+...
+## Installation
+...
