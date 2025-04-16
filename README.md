@@ -69,7 +69,7 @@ The application is built using JetBrains WebStorm IDE, and uses JetBrains YouTra
 - Google Maps API
 
 ## Documentation
-I have created a more in-depth set of documentation, which can be accessed here: [Documentation](https://kym-e.github.io/fluffy-engine/starter-topic.html)
+I have created a more in-depth set of documentation, which can be accessed here: [Documentation](https://kym-e.github.io/fluffy-engine/)
 
 ### Organiser View Docs
 - [How to Create Courses](docs/How-to-Create-Courses.md)
