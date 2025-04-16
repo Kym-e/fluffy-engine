@@ -1,12 +1,29 @@
 # Passion Fruit Studios: WEBDEV2 Coursework 2
 ![Logo of dance organisation](docs/images/PassionFruitLogo.png "Passion Fruit Studios Logo")
 
+## Table of Contents
+<!-- TOC -->
+* [Passion Fruit Studios: WEBDEV2 Coursework 2](#passion-fruit-studios-webdev2-coursework-2)
+  * [Table of Contents](#table-of-contents)
+  * [GitHub Repository](#github-repository)
+  * [Author](#author)
+  * [Description](#description)
+  * [Technologies Used](#technologies-used)
+  * [Documentation](#documentation)
+    * [Organiser View Docs](#organiser-view-docs)
+  * [Features](#features)
+    * [Dancers (Users not logged in)](#dancers-users-not-logged-in)
+    * [Organisers (Users logged in)](#organisers-users-logged-in)
+  * [How to Run the Application locally](#how-to-run-the-application-locally)
+<!-- TOC -->
+
 ## GitHub Repository
 GitHub Repository Link: [fluffy-engine](https://github.com/Kym-e/fluffy-engine)
 
 
 ## Author
 Kym Hannah: s2247460
+
 
 ## Description
 This is a web application that has been created for a local dance organisation called 'Passion Fruit Studios', 
@@ -52,6 +69,14 @@ The application is built using JetBrains WebStorm IDE, and uses JetBrains YouTra
 
 ## Documentation
 I have created a more in-depth set of documentation, which can be accessed here: [Documentation](https://kym-e.github.io/fluffy-engine/starter-topic.html)
+
+### Organiser View Docs
+- [How to Create Courses](docs/How-to-Create-Courses.md)
+- [How to Update Courses](docs/How-to-Update-Courses.md)
+- [How to Delete Courses](docs/How-to-Delete-Courses.md)
+- [How to Create Organisers](docs/How-to-Create-New-Organiser-Login.md)
+- [How to Delete Organisers](docs/How-to-Delete-Organiser-Login-Details.md)
+- [How to Get Course Attendee List](docs/How-to-Get-Course-Attendee-List.md)
 
 ## Features
 Features are based on requirements
