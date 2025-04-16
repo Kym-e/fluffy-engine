@@ -1,7 +1,6 @@
 # Passion Fruit Studios: WEBDEV2 Coursework 2
 ![Logo of dance organisation](docs/images/PassionFruitLogo.png "Passion Fruit Studios Logo")
 
-
 ## Table of Contents
 <!-- TOC -->
 * [Passion Fruit Studios: WEBDEV2 Coursework 2](#passion-fruit-studios-webdev2-coursework-2)
@@ -131,4 +130,7 @@ The application is deployed on Azure, and can be accessed on the following link:
    ```bash
    npm start
    ```
+   
+## SonarCloud Status
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=Kym-e_fluffy-engine2)](https://sonarcloud.io/summary/new_code?id=Kym-e_fluffy-engine2)
    
