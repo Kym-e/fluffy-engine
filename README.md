@@ -1,5 +1,5 @@
 # Passion Fruit Studios: WEBDEV2 Coursework 2
-![Logo of dance organisation](Docs/images/PassionFruitLogo.png "Passion Fruit Studios Logo")
+![Logo of dance organisation](docs/images/PassionFruitLogo.png "Passion Fruit Studios Logo")
 
 ## GitHub Repository
 GitHub Repository Link: [fluffy-engine](https://github.com/Kym-e/fluffy-engine)
