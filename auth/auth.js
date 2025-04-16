@@ -24,7 +24,7 @@ exports.login = function (req, res,next) {
                 res.cookie("jwt", accessToken);
                 next();
             } else {
-                return res.render("user/login"); //res.status(403).send();
+                return res.render("user/login");
             }
         });
     });

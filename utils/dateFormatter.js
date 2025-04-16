@@ -1,4 +1,4 @@
-// utils/dateFormatter.js
+// utils/dateFormatter.js - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat
 class DateFormatter {
     static format(date) {
         if (!date) return '';

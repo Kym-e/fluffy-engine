@@ -147,14 +147,14 @@ class DanceApp {
     }
 
     addCourseBooking(name, course, isUnderEighteen, email, additionalInfo) {
-        var entry = {
+        const entry = {
             name: name,
             course_booked: course,
             isUnderEighteen: isUnderEighteen,
             email: email,
             additionalInfo: additionalInfo,
             entryType: 'booking',
-        }
+        };
         console.log('entry created', entry);
         this.db.insert(entry, function (err, doc) {
             if (err) {
@@ -166,7 +166,7 @@ class DanceApp {
     }
 
     addCourse(course, youtube_embed, course_description, course_duration, course_start_date, course_end_date, course_time, course_fee, course_schedule, course_location, instructor, instructor_bio, isBeginner, isIntermediate, isAdvanced) {
-        var entry = {
+        const entry = {
             course: course,
             youtube_embed: youtube_embed,
             course_description: course_description,
@@ -183,7 +183,7 @@ class DanceApp {
             isIntermediate: isIntermediate,
             isAdvanced: isAdvanced,
             entryType: 'course',
-        }
+        };
         console.log('entry created', entry);
         this.db.insert(entry, function (err, doc) {
             if (err) {
@@ -212,7 +212,7 @@ class DanceApp {
     }
 
     updateCourse(course, youtube_embed, course_description, course_duration, course_start_date, course_end_date, course_time, course_fee, course_schedule, course_location, instructor, instructor_bio, isBeginner, isIntermediate, isAdvanced){
-        var entry = {
+        const entry = {
             course: course,
             youtube_embed: youtube_embed,
             course_description: course_description,
@@ -230,7 +230,7 @@ class DanceApp {
             isAdvanced: isAdvanced,
             entryType: 'course',
 
-        }
+        };
 
         this.db.update({course: course}, {$set:entry}, {}, function (err, numUpdated){
             if (err) {

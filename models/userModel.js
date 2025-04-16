@@ -17,7 +17,7 @@ class UserDAO {
     create(username, password) {
         const that = this;
         bcrypt.hash(password, saltRounds).then(function(hash) {
-            var entry = {
+            const entry = {
                 user: username,
                 password: hash,
             };
@@ -33,7 +33,7 @@ class UserDAO {
             if (err) {
                 return cb(null, null);
             } else {
-                if (entries.length == 0) {
+                if (entries.length === 0) {
                     return cb(null, null);
                 }
                 return cb(null, entries[0]);
