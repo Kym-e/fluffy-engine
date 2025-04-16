@@ -131,3 +131,4 @@ The application is deployed on Azure, and can be accessed on the following link:
    ```bash
    npm start
    ```
+   
