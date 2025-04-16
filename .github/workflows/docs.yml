@@ -12,9 +12,9 @@ permissions:
 env:
   INSTANCE: 'Writerside/pwad'
   # DOCKER_VERSION: '243.22562'
-  DOCKER_VERSION: '2025.03.8312'
+  DOCKER_VERSION: 'latest'
 
-# IS_GROUP: 'true'  # Uncomment to build a group
+ IS_GROUP: 'true'  # Uncomment to build a group
 
 jobs:
   build:
