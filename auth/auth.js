@@ -13,6 +13,7 @@ exports.login = function (req, res,next) {
         }
         if (!user) {
             console.log("user ", username, " not found");
+            return res.render("user/login_page", { error: "Invalid username or password" });
         }
         //compare provided password with stored password
         bcrypt.compare(password, user.password, function (err, result) {
@@ -24,7 +25,7 @@ exports.login = function (req, res,next) {
                 res.cookie("jwt", accessToken);
                 next();
             } else {
-                return res.render("user/login");
+                return res.render("user/login_page", { error: "Invalid username or password" });
             }
         });
     });

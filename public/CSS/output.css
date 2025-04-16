@@ -11,6 +11,7 @@
       "Courier New", monospace;
     --color-red-50: oklch(97.1% 0.013 17.38);
     --color-red-500: oklch(63.7% 0.237 25.331);
+    --color-red-700: oklch(50.5% 0.213 27.518);
     --color-orange-500: oklch(70.5% 0.213 47.604);
     --color-yellow-50: oklch(98.7% 0.026 102.212);
     --color-lime-500: oklch(76.8% 0.233 130.85);
@@ -685,6 +686,9 @@
   }
   .text-red-500 {
     color: var(--color-red-500);
+  }
+  .text-red-700 {
+    color: var(--color-red-700);
   }
   .text-transparent {
     color: transparent;
