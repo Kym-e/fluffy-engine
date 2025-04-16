@@ -61,7 +61,7 @@ class UserDAO {
         });
     }
 }
-const dao = new UserDAO("users.db");
+const dao = new UserDAO("./data/users.db");
 // dao.init();
 
 module.exports = dao;
