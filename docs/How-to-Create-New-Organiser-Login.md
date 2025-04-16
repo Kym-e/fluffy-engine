@@ -1,5 +1,9 @@
 # How to Create New Organiser Login Details
-# Organisers can create new login details in the Organiser View. This is a step-by-step guide on how to create new login details.
+![Logo of dance organisation](images/PassionFruitLogo.png "Passion Fruit Studios Logo")
+
+[Back Home](../README.md#organiser-view-docs)
+
+ Organisers can create new login details in the Organiser View. This is a step-by-step guide on how to create new login details.
 
 ## Before you start
 Make sure that:

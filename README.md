@@ -1,6 +1,7 @@
 # Passion Fruit Studios: WEBDEV2 Coursework 2
 ![Logo of dance organisation](docs/images/PassionFruitLogo.png "Passion Fruit Studios Logo")
 
+
 ## Table of Contents
 <!-- TOC -->
 * [Passion Fruit Studios: WEBDEV2 Coursework 2](#passion-fruit-studios-webdev2-coursework-2)

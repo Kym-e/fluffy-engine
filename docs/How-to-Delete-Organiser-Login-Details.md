@@ -1,4 +1,8 @@
 # How to Delete Organiser Login Details
+![Logo of dance organisation](images/PassionFruitLogo.png "Passion Fruit Studios Logo")
+
+[Back Home](../README.md#organiser-view-docs)
+
 Organisers can delete organiser login details in the Organiser View. This is a step by step guide on how to delete your login details.
 
 ## Before you start

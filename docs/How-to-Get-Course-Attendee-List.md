@@ -1,4 +1,8 @@
 # How to Get Course Attendee List
+![Logo of dance organisation](images/PassionFruitLogo.png "Passion Fruit Studios Logo")
+
+[Back Home](../README.md#organiser-view-docs)
+
 Organisers can get the course attendee list in the Organiser View. This is a step-by-step guide on how to get the course attendee list.
 
 ## Before you start

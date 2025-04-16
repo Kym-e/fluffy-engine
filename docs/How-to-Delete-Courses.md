@@ -1,4 +1,8 @@
 # How to Delete Courses
+![Logo of dance organisation](images/PassionFruitLogo.png "Passion Fruit Studios Logo")
+
+[Back Home](../README.md#organiser-view-docs)
+
 Organisers can delete courses in the Organiser View. This is a step-by-step guide on how to delete a course.
 
 ## Before you start

@@ -1,4 +1,7 @@
 # How to Create Courses
+![Logo of dance organisation](images/PassionFruitLogo.png "Passion Fruit Studios Logo")
+
+[Back Home](../README.md#organiser-view-docs)
 
 Organisers can create courses in the Organiser View.  This is a step by step guide on how to create a course.
 
@@ -13,9 +16,9 @@ Make sure that:
 
 An Organiser can create a course in the Organiser View.
 1. Click on the **Create New Course** button on the Organiser View.
-![](images/CreateNewCourse1.png){width=500}
+![](images/CreateNewCourse1.png)
 2. Fill in details on the **Create Course** page.
-![](images/CreateNewCourse2.png){width=500}
+![](images/CreateNewCourse2.png)
 
 Expected data as follows:
 
@@ -35,6 +38,6 @@ Expected data as follows:
 | Beginner/Intermediate/Advanced      | The level of the course.  This is a checkbox.  Please only select 1                        | Check box                           |
 
 Youtube Embeded Link
-![](images/CreateNewCourseYoutube.png "Youtube Embed Code"){width=500}
+![](images/CreateNewCourseYoutube.png "Youtube Embed Code")
 
 3. Click on the **Create Course** button to create the course.
