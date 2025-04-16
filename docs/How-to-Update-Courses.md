@@ -21,4 +21,4 @@ An Organiser can update a course in the Organiser View.
 3. Fill in the details on the **Update Course** page.
    - You can update any of the fields in the course.
    - The fields are the same as the ones in the **Create Course** page.
-3. Click on the **Update** button to update the course.
+4. Click on the **Update** button to update the course.
