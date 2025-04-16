@@ -1,0 +1,71 @@
+<html>
+<head>
+    {{>base_header}}
+</head>
+<body>
+<!-- Nav bar -->
+{{>organiser/org_nav}}
+
+<!-- Course List -->
+<main>
+
+    <div class="md:mt-20 md:mb-10
+            not-md:justify-center not-md:items-center not-md:mx-auto not-md:mt-10 not-md:mb-10
+            flex text-center justify-center items-center">
+        <!-- Header -->
+        <p class="text-5xl text-center font-lacquer text-gray-700">Courses</p>
+    </div>
+
+    {{#courses}}
+        <!-- Course List -->
+        <div class="grid auto-cols-auto
+            md:grid-cols-4 md:gap-1
+            not-md:grid-cols-1 not-md:gap-1
+            not-md:object-cover not-md:rounded-lg not-md:shadow-lg
+            mt-3 mx-10">
+            <!-- grid 1-->
+            <div class="relative group not-md:text-center">
+                {{#isBeginner}}
+                    <p class="text-green-500 text-5xl not-md:text-3xl text-center font-lacquer"><i class="fa-solid fa-fire"></i></p>
+                {{/isBeginner}}
+                {{#isIntermediate}}
+                    <p class="text-orange-500 text-5xl not-md:text-3xl text-center font-lacquer"><i class="fa-solid fa-fire"></i></p>
+                {{/isIntermediate}}
+                {{#isAdvanced}}
+                    <p class="text-red-500 text-5xl not-md:text-3xl text-center font-lacquer"><i class="fa-solid fa-fire"></i></p>
+                {{/isAdvanced}}
+            </div>
+
+            <!-- grid 2-->
+            <div class="not-md:text-center">
+                <p class="text-2xl text-gray-700">{{course}}</p>
+                <p class="text-xl text-gray-700">Duration: {{course_duration}}</p>
+            </div>
+
+            <!-- grid 3 -->
+            <div class="not-md:text-center">
+                <p class="text-xl text-gray-700">Start: {{course_start_date}}</p>
+                <p class="text-xl text-gray-700">End: {{course_end_date}}</p>
+            </div>
+
+            <!-- grid 4: Delete Button -->
+            <div  class=" font-bold text-2xl
+                   flex justify-center items-center not-md:m-5
+                   ">
+                <form action="/deleteCourse" method="POST">
+                    <input type="hidden" name="course" value="{{course}}">
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Delete
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    {{/courses}}
+
+    {{#empty}}
+        <p>No courses available.</p>
+    {{/empty}}
+</main>
+</body>
+</html>

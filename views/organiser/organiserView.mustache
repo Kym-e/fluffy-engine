@@ -1,0 +1,74 @@
+<html>
+<head>
+    {{>base_header}}
+</head>
+<body>
+<!-- Nav bar -->
+{{>organiser/org_nav}}
+
+<!-- Booking Success -->
+{{#success}}
+    <div class="">
+        <p class="md:mt-20 md:mb-10 flex items-center justify-center border-2 border-gray-500 rounded-lg p-3 md:col-span-2 shadow-lg bg-green-50
+            not-md:justify-center not-md:items-center not-md:mx-auto not-md:mt-10 not-md:mb-10
+            flex text-center justify-center items-center">Successful</p>
+    </div>
+{{/success}}
+
+
+<!-- Organiser view -->
+<div class="md:mt-20 md:mb-10
+            not-md:justify-center not-md:items-center not-md:mx-auto not-md:mt-10 not-md:mb-10
+            text-center justify-center items-center">
+    <!-- Header: Manage Courses-->
+    <p class="text-3xl text-center font-lacquer text-gray-700 mb-10">Manage Courses</p>
+
+    <!-- Course CRUD -->
+    <div class="grid text-2xl
+                md:grid-cols-2 md:gap-8
+                not-md:grid-cols-1 not-md:gap-1
+                not-md:object-cover not-md:rounded-lg not-md:shadow-lg
+                mt-3 mx-10">
+        <div class="border-gray-500 rounded-lg p-3 shadow-lg bg-green-50">
+            <a href="/createCourse">Create New Course</a>
+            <div><a href="/createCourse"><i class="fa-solid fa-plus"></i></a></div>
+
+        </div>
+        <div class="border-gray-500 rounded-lg p-3 shadow-lg bg-purple-50">
+            <a href="/updateCourse">Update Course</a>
+            <div><a href="/updateCourse"><i class="fa-solid fa-pen"></i></a></div>
+        </div>
+        <div class="border-gray-500 rounded-lg p-3 shadow-lg bg-red-50">
+            <a href="/deleteCourse">Delete Course</a>
+            <div><a href="/deleteCourse"><i class="fa-solid fa-minus"></i></a></div>
+        </div>
+        <div class="border-gray-500 rounded-lg p-3 shadow-lg bg-blue-50">
+            <a href="/getCourseList">View Course/Class List</a>
+            <div><a href="/getCourseList"><i class="fa-solid fa-list"></i></a></div>
+        </div>
+    </div>
+</div>
+
+<div class="md:mt-20 md:mb-10
+            not-md:justify-center not-md:items-center not-md:mx-auto not-md:mt-10 not-md:mb-10
+            text-center justify-center items-center">
+    <!-- Header: Manager Users-->
+    <p class="text-3xl text-center font-lacquer text-gray-700 mb-10">Manage Users</p>
+    <!-- User CRUD -->
+    <div class="grid text-2xl
+                md:grid-cols-2 md:gap-8
+                not-md:grid-cols-1 not-md:gap-1
+                not-md:object-cover not-md:rounded-lg not-md:shadow-lg
+                mt-3 mx-10">
+        <div class="border-gray-500 rounded-lg p-3 shadow-lg bg-green-50">
+            <a href="/register">Create New Organiser</a>
+            <div><a href="/register"><i class="fa-solid fa-user-plus"></i></a></div>
+        </div>
+        <div class="border-gray-500 rounded-lg p-3 shadow-lg bg-red-50">
+            <a href="/deleteUser">Delete Organiser</a>
+            <div><a href="/deleteUser"><i class="fa-solid fa-user-minus"></i></a></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

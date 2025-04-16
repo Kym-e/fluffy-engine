@@ -50,9 +50,16 @@
             </a>
         </li>
         <li>
-            <a class="text-3xl text-gray-400 hover:text-orange-500 align-bottom"  href="/login" target="_blank">
+            {{^user}}
+            <a class="text-3xl text-gray-400 hover:text-green-500 align-bottom"  href="/login">
                 <i class="fa-regular fa-user"></i>
             </a>
+            {{/user}}
+            {{#user}}
+                    <a class="text-3xl text-gray-400 hover:text-red-500 align-bottom"  href="/logout">
+                        <i class="fa-regular fa-user"></i>
+                    </a>
+            {{/user}}
         </li>
 
     </ul>

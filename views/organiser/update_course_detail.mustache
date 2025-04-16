@@ -1,0 +1,94 @@
+<html>
+<head>
+    {{>base_header}}
+</head>
+<body>
+<!-- Nav bar -->
+{{>organiser/org_nav}}
+
+<!-- Create Course Form -->
+<main>
+    <div class="mt-20 mb-10  text-center justify-center items-center mx-10 my-5
+                not-md:mt-10 not-md:mb-10">
+        <!-- Heading -->
+        <div>
+            <p class="text-5xl text-center font-lacquer text-gray-700">Update {{course}}</p>
+        </div>
+
+        {{#entries}}
+        <!-- Form for creating a course -->
+        <form method="POST" action="/updateCourse/{{course}}" class="flex flex-col items-center">
+            <div class="mb-4">
+                <!-- Course Name -->
+                <input type="hidden" id="course" name="course" class="border border-gray-300 rounded-lg p-2 w-full" value="{{course}}" required>
+
+                <!-- Youtube Link -->
+                <label for="youtube_embed" class="block text-gray-700 text-lg font-bold mb-2 mt-4">Youtube Link:</label>
+                <textarea id="youtube_embed" name="youtube_embed" class="border border-gray-300 rounded-lg p-2 w-full" rows="11">{{youtube_embed}}</textarea>
+
+                <!-- Course Description -->
+                <label for="course_description" class="block text-gray-700 text-lg font-bold mb-2 mt-4">Course Description:</label>
+                <textarea id="course_description" name="course_description" class="border border-gray-300 rounded-lg p-2 w-full" rows="4" required>{{course_description}}</textarea>
+
+                <!-- Course Start Date -->
+                <label for="course_start_date" class="block text-gray-700 text-lg font-bold mb-2 mt-4">Course Start Date:</label>
+                <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="course_start_date" name="course_start_date" class="border border-gray-300 rounded-lg p-2 w-full" value="{{course_start_date}}" required>
+
+                <!-- Course End Date -->
+                <label for="course_end_date" class="block text-gray-700 text-lg font-bold mb-2 mt-4">Course End Date:</label>
+                <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="course_end_date" name="course_end_date" class="border border-gray-300 rounded-lg p-2 w-full" value="{{course_end_date}}" required>
+
+                <!-- Course Duration -->
+                <label for="course_duration" class="block text-gray-700 text-lg font-bold mb-2 mt-4">Course Duration:</label>
+                <input type="text" id="course_duration" name="course_duration" class="border border-gray-300 rounded-lg p-2 w-full" value="{{course_duration}}" required>
+
+                <!-- Course Time -->
+                <label for="course_time" class="block text-gray-700 text-lg font-bold mb-2 mt-4">Course Time:</label>
+                <input type="text" id="course_time" name="course_time" class="border border-gray-300 rounded-lg p-2 w-full" value="{{course_time}}" required>
+
+                <!-- Course Scheduling -->
+                <label for="course_schedule" class="block text-gray-700 text-lg font-bold mb-2 mt-4">Course Schedule:</label>
+                <input type="text" id="course_schedule" name="course_schedule" class="border border-gray-300 rounded-lg p-2 w-full" value="{{course_schedule}}" required>
+
+                <!-- Course Location -->
+                <label for="course_location" class="block text-gray-700 text-lg font-bold mb-2 mt-4">Course Location:</label>
+                <input type="text" id="course_location" name="course_location" class="border border-gray-300 rounded-lg p-2 w-full" value="{{course_location}}" required>
+
+                <!-- Course Fee -->
+                <label for="course_fee" class="block text-gray-700 text-lg font-bold mb-2 mt-4">Course Fee:</label>
+                <input type="text" id="course_fee" name="course_fee" class="border border-gray-300 rounded-lg p-2 w-full" value="{{course_fee}}" required>
+
+                <!-- Course Instructor -->
+                <label for="instructor" class="block text-gray-700 text-lg font-bold mb-2 mt-4">Instructor:</label>
+                <input type="text" id="instructor" name="instructor" class="border border-gray-300 rounded-lg p-2 w-full" value="{{instructor}}" required>
+
+                <!-- Instructor Bio -->
+                <label for="instructor_bio" class="block text-gray-700 text-lg font-bold mb-2 mt-4">Instructor Bio:</label>
+                <textarea id="instructor_bio" name="instructor_bio" class="border border-gray-300 rounded-lg p-2 w-full" rows="4" required>{{instructor_bio}}</textarea>
+
+                <!-- Is Beginner -->
+                <label for="isBeginner" class="block text-gray-700 text-lg font-bold mb-2 mt-4">Beginner</label>
+                <input type="checkbox" id="isBeginner" name="isBeginner" class="border border-gray-300 rounded-lg p-2"
+                {{#isBeginner}} checked {{/isBeginner}}>
+
+                <!-- Is Intermediate -->
+                <label for="isIntermediate" class="block text-gray-700 text-lg font-bold mb-2 mt-4">Intermediate</label>
+                <input type="checkbox" id="isIntermediate" name="isIntermediate" class="border border-gray-300 rounded-lg p-2"
+                {{#isIntermediate}} checked {{/isIntermediate}}>
+
+                <!-- Is Advanced -->
+                <label for="isAdvanced" class="block text-gray-700 text-lg font-bold mb-2 mt-4">Advanced</label>
+                <input type="checkbox" id="isAdvanced" name="isAdvanced" class="border border-gray-300 rounded-lg p-2"
+                {{#isAdvanced}} checked {{/isAdvanced}}>
+            </div>
+        {{/entries}}
+            <!-- Submit Button -->
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Update Course
+            </button>
+        </form>
+    </div>
+</main>
+
+</body>
+</html>

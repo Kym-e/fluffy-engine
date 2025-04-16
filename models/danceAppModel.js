@@ -122,12 +122,25 @@ class DanceApp {
 
     getEntriesByCourse(course) {
         return new Promise((resolve, reject) => {
-            this.db.find({ 'course': course }, function (err, entries) {
+            this.db.find({ 'course': course, 'entryType': 'course' }, function (err, entries) {
                 if (err) {
                     reject(err);
                 } else {
                     resolve(entries);
                     console.log('getEntriesByCourse returns: ', entries);
+                }
+            })
+        })
+    }
+
+    getEntriesByCourseAndBooking(course) {
+        return new Promise((resolve, reject) => {
+            this.db.find({ 'course_booked': course, 'entryType': 'booking' }, function (err, entries) {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(entries);
+                    console.log('getEntriesByCourseAndBooking returns: ', entries);
                 }
             })
         })
@@ -151,8 +164,84 @@ class DanceApp {
             }
         })
     }
-}
 
+    addCourse(course, youtube_embed, course_description, course_duration, course_start_date, course_end_date, course_time, course_fee, course_schedule, course_location, instructor, instructor_bio, isBeginner, isIntermediate, isAdvanced) {
+        var entry = {
+            course: course,
+            youtube_embed: youtube_embed,
+            course_description: course_description,
+            course_duration: course_duration,
+            course_start_date: new Date(course_start_date),
+            course_end_date: new Date(course_end_date),
+            course_time: course_time,
+            course_fee: course_fee,
+            course_schedule: course_schedule,
+            course_location: course_location,
+            instructor: instructor,
+            instructor_bio: instructor_bio,
+            isBeginner: isBeginner,
+            isIntermediate: isIntermediate,
+            isAdvanced: isAdvanced,
+            entryType: 'course',
+        }
+        console.log('entry created', entry);
+        this.db.insert(entry, function (err, doc) {
+            if (err) {
+                console.log('Error inserting document', subject);
+            } else {
+                console.log('document inserted into the database', doc);
+            }
+        })
+    }
+
+    deleteCourse(course) {
+        this.db.remove({ course: course }, {}, function (err, numRemoved) {
+            if (err) {
+                console.log('Error deleting document', err);
+            } else {
+                console.log(numRemoved + ' course document(s) deleted');
+            }
+        })
+        this.db.remove({ course_booked: course }, {multi:true}, function (err, numRemoved) {
+            if (err) {
+                console.log('Error deleting document', err);
+            } else {
+                console.log(numRemoved + ' booking document(s) deleted');
+            }
+        })
+    }
+
+    updateCourse(course, youtube_embed, course_description, course_duration, course_start_date, course_end_date, course_time, course_fee, course_schedule, course_location, instructor, instructor_bio, isBeginner, isIntermediate, isAdvanced){
+        var entry = {
+            course: course,
+            youtube_embed: youtube_embed,
+            course_description: course_description,
+            course_duration: course_duration,
+            course_start_date: new Date(course_start_date),
+            course_end_date: new Date(course_end_date),
+            course_time: course_time,
+            course_fee: course_fee,
+            course_schedule: course_schedule,
+            course_location: course_location,
+            instructor: instructor,
+            instructor_bio: instructor_bio,
+            isBeginner: isBeginner,
+            isIntermediate: isIntermediate,
+            isAdvanced: isAdvanced,
+            entryType: 'course',
+
+        }
+
+        this.db.update({course: course}, {$set:entry}, {}, function (err, numUpdated){
+            if (err) {
+                console.log('Error updating document', err);
+            } else {
+                console.log(numUpdated + ' document(s) updated');
+            }}
+
+        )
+    }
+}
 
 //make the module visible outside
 module.exports = DanceApp;

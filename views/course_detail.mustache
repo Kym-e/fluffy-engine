@@ -17,6 +17,7 @@
             <p class="text-2xl text-gray-700">Duration: {{course_duration}}</p>
             {{/entries}}
         </div>
+
         <!-- Difficulty Level -->
         <div class="md:ml-10 relative group">
             {{#entries}}
@@ -41,6 +42,13 @@
             {{/entries}}
         </div>
     </div>
+
+    <!-- youtube video -->
+    {{#entries}}
+    <div class="flex justify-center items-center {{^youtube_embed}}hidden{{/youtube_embed}}">
+        {{{youtube_embed}}}
+    </div>
+    {{/entries}}
 
     {{#entries}}
     <!-- Course Description with rounded border-->

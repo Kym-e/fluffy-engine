@@ -1,0 +1,46 @@
+<html>
+<head>
+    {{>base_header}}
+</head>
+<body>
+<!-- Nav bar -->
+{{>organiser/org_nav}}
+
+<!-- Course List -->
+<main>
+
+    <div class="md:mt-20 md:mb-10
+            not-md:justify-center not-md:items-center not-md:mx-auto not-md:mt-10 not-md:mb-10
+            flex text-center justify-center items-center">
+        <!-- Header -->
+        <p class="text-5xl text-center font-lacquer text-gray-700">Delete Organiser</p>
+    </div>
+
+    {{#users}}
+        <!-- User List -->
+        <div class="grid auto-cols-auto
+            grid-cols-1 gap-1
+            object-cover rounded-lg shadow-lg
+            mt-3 md:mx-50">
+            <!-- grid 1-->
+            <div class="relative group text-center pt-4">
+                <p class="text-4xl">{{user}}</p>
+            </div>
+
+            <!-- grid 2: Delete Button -->
+            <div  class=" font-bold text-2xl
+                   flex justify-center items-center m-5
+                   ">
+                <form action="/deleteUser" method="POST">
+                    <input type="hidden" name="user" value="{{user}}">
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Delete
+                    </button>
+                </form>
+            </div>
+        </div>
+    {{/users}}
+</main>
+
+</body>
+</html>

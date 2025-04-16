@@ -1,0 +1,32 @@
+<!-- component -->
+<nav class="relative px-4 py-4 justify-between items-center bg-white">
+
+    <!-- Logo -->
+    <div class="flex justify-center">
+        <a class="font-lacquer tracking-tighter text-4xl font-bold absolute
+                  bg-gradient-to-r from-teal-500 via-fuchsia-500 to-lime-500 bg-clip-text text-transparent"
+           href="/organiser">
+            Organiser View
+            <img class="inline-block h-10 w-10 brightness-150 " src="/images/logo.png" alt="Logo">
+        </a>
+    </div>
+    <!--logout-->
+    <div class="">
+        <ul class="flex justify-end align-bottom top-1/2">
+
+            <li>
+                {{^user}}
+                    <a class="text-3xl text-gray-400 hover:text-green-500 align-bottom"  href="/login">
+                        <i class="fa-regular fa-user"></i>
+                    </a>
+                {{/user}}
+                {{#user}}
+                    <a class="text-3xl text-gray-400 hover:text-red-500 align-bottom"  href="/logout">
+                        <i class="fa-regular fa-user"></i>
+                    </a>
+                {{/user}}
+            </li>
+
+        </ul>
+    </div>
+</nav>

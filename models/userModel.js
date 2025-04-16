@@ -52,6 +52,26 @@ class UserDAO {
             }
         });
     }
+    delete(user, cb) {
+        this.db.remove({'user': user}, {}, function (err, numRemoved) {
+            if (err) {
+                console.log('Error deleting document', err);
+            } else {
+                console.log(numRemoved + ' document(s) deleted');
+            }
+        });
+    }
+    getAllUsers() {
+        return new Promise((resolve, reject) => {
+            this.db.find({}, function (err, entries) {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(entries);
+                }
+            });
+        });
+    }
 }
 const dao = new UserDAO("users.db");
 // dao.init();
