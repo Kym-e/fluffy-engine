@@ -1,5 +1,4 @@
 const nedb = require('gray-nedb');
-
 class DanceApp {
 
     constructor(dbFilePath) {
@@ -20,8 +19,8 @@ class DanceApp {
                     'This course is designed for beginners who want to learn the basics of salsa dancing.  ' +
                     'The course will cover basic steps, turns, and partner work. No prior dance experience is required.',
                 course_duration: '6 weeks',
-                course_start_date: new Date('2023-10-01'),
-                course_end_date: new Date('2023-11-12'),
+                course_start_date: '2023-10-01',
+                course_end_date:'2023-11-12',
                 course_time: '10:00 AM - 11:30 AM',
                 course_fee: 100,
                 course_schedule: 'Every Saturday',
@@ -42,8 +41,8 @@ class DanceApp {
                 course_description: 'This course is designed for those who have completed the Beginners Salsa course. ' +
                     'The course will cover more advanced steps, turns, and partner work.',
                 course_duration: '6 weeks',
-                course_start_date: new Date('2023-11-01'),
-                course_end_date: new Date('2023-12-12'),
+                course_start_date:'2023-11-01',
+                course_end_date: '2023-12-12',
                 course_time: '10:00 AM - 11:30 AM',
                 course_fee: 120,
                 course_schedule: 'Every Saturday',
@@ -63,8 +62,8 @@ class DanceApp {
                 course_description: 'This course is designed for those who have completed the Intermediate Salsa course. ' +
                     'The course will cover advanced techniques and choreography.',
                 course_duration: '6 weeks',
-                course_start_date: new Date('2023-12-01'),
-                course_end_date: new Date('2024-01-12'),
+                course_start_date: '2023-12-01',
+                course_end_date: '2024-01-12',
                 course_time: '10:00 AM - 11:30 AM',
                 course_fee: 150,
                 course_schedule: 'Every Saturday',
@@ -84,8 +83,8 @@ class DanceApp {
                 course_description: 'This course is designed for beginners who want to learn the basics of ballet dancing. ' +
                     'The course will cover basic positions, movements, and techniques. No prior dance experience is required.',
                 course_duration: '8 weeks',
-                course_start_date: new Date('2023-10-01'),
-                course_end_date: new Date('2023-11-26'),
+                course_start_date: '2023-10-01',
+                course_end_date: '2023-11-26',
                 course_time: '2:00 PM - 3:30 PM',
                 course_fee: 120,
                 course_schedule: 'Every Sunday',
@@ -171,8 +170,8 @@ class DanceApp {
             youtube_embed: youtube_embed,
             course_description: course_description,
             course_duration: course_duration,
-            course_start_date: new Date(course_start_date),
-            course_end_date: new Date(course_end_date),
+            course_start_date: course_start_date,
+            course_end_date: course_end_date,
             course_time: course_time,
             course_fee: course_fee,
             course_schedule: course_schedule,
@@ -217,8 +216,8 @@ class DanceApp {
             youtube_embed: youtube_embed,
             course_description: course_description,
             course_duration: course_duration,
-            course_start_date: new Date(course_start_date),
-            course_end_date: new Date(course_end_date),
+            course_start_date: course_start_date,
+            course_end_date: course_end_date,
             course_time: course_time,
             course_fee: course_fee,
             course_schedule: course_schedule,

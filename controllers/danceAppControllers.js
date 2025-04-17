@@ -1,6 +1,5 @@
 const danceAppDAO = require('../models/danceAppModel');
 const db = new danceAppDAO('./data/danceApp.db');
-const DateFormatter = require('../utils/dateFormatter');
 const userDao = require("../models/userModel.js");
 
 // db.init();
@@ -35,16 +34,11 @@ exports.courses_page = function(req, res) {
     const success = req.query.success === 'true';
     db.getAllEntries()
         .then((list) => {
-            const formattedList = list.map(course => ({
-                ...course,
-                course_start_date: DateFormatter.format(course.course_start_date),
-                course_end_date: DateFormatter.format(course.course_end_date),
-            }));
             res.render('courses',
                 {
                     'title': 'Courses',
                     'GOOGLE_MAPS_API_KEY': process.env.GOOGLE_MAPS_API_KEY,
-                    'courses': formattedList,
+                    'courses': list,
                     'success':success,
                 }
             );
@@ -58,19 +52,12 @@ exports.course_detail_page = function(req, res) {
     let course = req.params.course;
     db.getEntriesByCourse(course)
         .then((entries) => {
-            const formattedEntries = entries.map(entry => ({
-                ...entry,
-                course_start_date: DateFormatter.format(entry.course_start_date),
-                course_end_date: DateFormatter.format(entry.course_end_date),
-            }));
-
-
             res.render('course_detail',
                 {
                     'title': `${course}`,
                     'GOOGLE_MAPS_API_KEY': process.env.GOOGLE_MAPS_API_KEY,
                     'course': course,
-                    'entries': formattedEntries,
+                    'entries': entries,
                 }
             );
         })
@@ -204,15 +191,10 @@ exports.post_create_course = function(req, res) {
 exports.delete_course_page = function(req, res) {
     db.getAllEntries()
         .then((list) => {
-            const formattedList = list.map(course => ({
-                ...course,
-                course_start_date: DateFormatter.format(course.course_start_date),
-                course_end_date: DateFormatter.format(course.course_end_date),
-            }));
             res.render('organiser/delete_course',
                 {
                     'title': 'Delete Course',
-                    'courses': formattedList,
+                    'courses': list,
                     'user': "user",
                 }
             );
@@ -256,15 +238,10 @@ exports.post_delete_user = function(req, res) {
 exports.update_course_page = function(req, res) {
     db.getAllEntries()
         .then((list) => {
-            const formattedList = list.map(course => ({
-                ...course,
-                course_start_date: DateFormatter.format(course.course_start_date),
-                course_end_date: DateFormatter.format(course.course_end_date),
-            }));
             res.render('organiser/update_course',
                 {
                     'title': 'Update Course',
-                    'courses': formattedList,
+                    'courses': list,
                     'user': "user",
                 }
             );
@@ -278,17 +255,11 @@ exports.update_course_detail_page = function(req, res) {
     let course = req.params.course;
     db.getEntriesByCourse(course)
         .then((entries) => {
-            const formattedEntries = entries.map(entry => ({
-                ...entry,
-                course_start_date: DateFormatter.format(entry.course_start_date),
-                course_end_date: DateFormatter.format(entry.course_end_date),
-            }));
-
             res.render('organiser/update_course_detail',
                 {
                     'title': `${course}`,
                     'course': course,
-                    'entries': formattedEntries,
+                    'entries': entries,
                     'user': "user",
                 }
             );
@@ -324,15 +295,10 @@ exports.post_update_course = function(req, res) {
 exports.get_course_list_page = function(req, res) {
     db.getAllEntries()
         .then((list) => {
-            const formattedList = list.map(course => ({
-                ...course,
-                course_start_date: DateFormatter.format(course.course_start_date),
-                course_end_date: DateFormatter.format(course.course_end_date),
-            }));
             res.render('organiser/view_course',
                 {
                     'title': 'Get Course List',
-                    'courses': formattedList,
+                    'courses': list,
                     'user': "user",
                 }
             );
@@ -346,17 +312,11 @@ exports.get_course_list_detail_page = function(req, res) {
     let course = req.params.course;
     db.getEntriesByCourseAndBooking(course)
         .then((entries) => {
-            const formattedEntries = entries.map(entry => ({
-                ...entry,
-                course_start_date: DateFormatter.format(entry.course_start_date),
-                course_end_date: DateFormatter.format(entry.course_end_date),
-            }));
-
             res.render('organiser/view_course_detail',
                 {
                     'title': `${course}`,
                     'course': course,
-                    'entries': formattedEntries,
+                    'entries': entries,
                     'user': "user",
                 }
             );
