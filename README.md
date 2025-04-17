@@ -15,6 +15,8 @@
     * [Dancers (Users not logged in)](#dancers-users-not-logged-in)
     * [Organisers (Users logged in)](#organisers-users-logged-in)
   * [How to Run the Application locally](#how-to-run-the-application-locally)
+  * [SonarCloud Status](#sonarcloud-status)
+  * [Test Results](#test-results)
 <!-- TOC -->
 
 ## GitHub Repository
@@ -136,7 +138,7 @@ The application is deployed on Azure, and can be accessed on the following link:
    
 ## Test Results
 System Test results are available in the [Test/TestPlan.md](Test/TestPlan.md) file.  
-Evidence of the tests are available in the ResultsEvidence folder.  
+Evidence of the tests are available in the Full System Test folder.  
 This contains PDF and video evidence exported from Xray Exploratory App.
 
 2 Issues were found and fixed:
